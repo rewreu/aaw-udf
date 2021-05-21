@@ -1,0 +1,83 @@
+{
+  "name": "Kinetica BlackBox SDK: Trivial Example BlackBox functions",
+  "desc": "Kinetica BlackBox SDK: Trivial BlackBox functions demonstrating possible options and permutations",
+  "icon_uri": "https://kinetica-aaw-marketplace.s3.amazonaws.com/logos/appstore_logo_model.png",
+  "src_uri": "rewreu/simpleTemperature:latest",
+  "type": "BLACKBOX",
+  "industry": [],
+  "keywords": [],
+  "docs_url": "",
+  "api_url": "",
+  "is_featured": true,
+  "is_available": true,
+  "thumbnail_url": "",
+  "screenshot_urls": [],
+  "functions": [
+    {
+      "name": "Kinetica BlackBox Sample: Temperature conversion",
+      "desc": "Kinetica BlackBox Sample: Temperature conversion from fahrenheit to centrigrade",
+      "bb_module": "bb_module_temperature",
+      "bb_function": "convert_to_celsius",
+      "multiout": false,
+      "input_record_type": [
+        {
+          "col_name": "temp_f",
+          "col_type": "double",
+          "col_desc": "Temperature in fahrenheit",
+          "col_default_val": "18.7"
+        }
+      ],
+      "output_record_type": [
+        {
+          "col_name": "temp_c",
+          "col_type": "double",
+          "col_desc": "Temperature converted to centrigrade"
+        },
+        {
+          "col_name": "temp_k",
+          "col_type": "double",
+          "col_desc": "Temperature converted to kelvins"
+        },
+        {
+          "col_name": "state",
+          "col_type": "string|store_only",
+          "col_desc": "The state of water at this temperature"
+        }
+      ],
+      "env_vars": []
+    },
+    {
+      "name": "Kinetica BlackBox Sample: Temperature conversion",
+      "desc": "Kinetica BlackBox Function Sample: Temperature conversion from centrigrade to fahrenheit -- mean to demonstrate the use of functions outside of bb_module_default.",
+      "bb_module": "bb_module_temperature",
+      "bb_function": "convert_to_fahrenheit",
+      "multiout": false,
+      "input_record_type": [
+        {
+          "col_name": "temp_c",
+          "col_type": "double",
+          "col_desc": "Temperature in centrigrade",
+          "col_default_val": "187"
+        }
+      ],
+      "output_record_type": [
+        {
+          "col_name": "temp_f",
+          "col_type": "double",
+          "col_desc": "Temperature converted to fahrenheit"
+        },
+        {
+          "col_name": "temp_k",
+          "col_type": "double",
+          "col_desc": "Temperature converted to kelvins"
+        },
+        {
+          "col_name": "state",
+          "col_type": "string|store_only",
+          "col_desc": "The state of water at this temperature"
+        }
+      ],
+      "env_vars": []
+    }
+  ]
+}
