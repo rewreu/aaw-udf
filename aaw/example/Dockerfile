@@ -21,4 +21,4 @@ ADD bb_module_temperature.py ./
 # ADD quantlib_opt_pricer_greeks.py ./
 
 RUN ["chmod", "+x",  "bb_runner.sh"]
-ENTRYPOINT ["bash","/opt/gpudb/kml/bb_runner.sh"]
+ENTRYPOINT ["/opt/gpudb/kml/bb_runner.sh"]
