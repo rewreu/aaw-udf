@@ -1,0 +1,13 @@
+from kinetica_proc import ProcData
+import h3
+proc_data = ProcData()
+
+df = proc_data.to_df()
+
+
+df["h3"] = df.apply(lambda row: h3.geo_to_h3(row["x"], row["y"], row["res"]),axis=1)
+
+output_table = proc_data.output_data[0]
+output_table.size = df.shape[0]
+proc_data.from_df(df, output_table)
+proc_data.complete()
